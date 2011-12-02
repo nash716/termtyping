@@ -165,9 +165,9 @@ function typing() {
 			if (count > _input) { // Game end
 				end = moment();
 				
+				score = Math.floor((_input * 50 - wrong * _input) / end.diff(start, 'seconds'));
 				tweetText = _input + ' 個のコマンドを ' + end.diff(start, 'seconds') + ' 秒で入力しました！スコアは ' + score + ' でした！ #termtyping';
 				
-				score = Math.floor((_input * 50 - wrong * _input) / end.diff(start, 'seconds'));
 				appendString('<br />result: ' + end.diff(start, 'seconds') + 's, score: ' + score);
 
 				_input	=	0;
